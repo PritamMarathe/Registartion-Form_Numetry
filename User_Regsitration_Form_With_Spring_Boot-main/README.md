@@ -58,6 +58,8 @@ User Registration form with spring boot and mysql database
 <ul>
     <li><code>register.html</code>: A form for user registration with fields for username, email, phone number, password, confirm password, and gender. Includes error messages and validation feedback.</li>
     <li><code>user.html</code>: Displays a list of registered users in a table format.</li>
+    <li><code>styles.css</code>: The displayed UI in the structurer format.</li>
+
 </ul>
 
 <h2>Application Flow:</h2>
