@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page</title>
+<link rel="stylesheet" th:href="@{../css/styles.css}">
+</head>
+<body>
+
+	<div class="container">
+		<h2>Registration Form</h2>
+
+		<div th:if="${message != null}" class="message">[[${message}]]</div>
+
+		<form th:action="@{/registration}" method="post" role="form"
+			th:object="${user}">
+			<div class="input-group">
+				<label for="username">User Name</label> <input
+					th:field="*{username}" type="text" id="username" name="username"
+					placeholder="Enter User Name" required>
+				<div class="error" style="color: red"
+					th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+			</div>
+
+			<div class="input-group">
+				<label for="email">Email</label> <input th:field="*{email}"
+					type="text" id="email" name="email" placeholder="Enter your Email"
+					required>
+				<div class="error" style="color: red"
+					th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+			</div>
+
+			<div class="input-group">
+				<label for="phoneno">Phone No</label> <input th:field="*{phoneno}"
+					type="text" id="phoneno" name="phoneno"
+					placeholder="Enter your Phone No" required>
+				<div class="error" style="color: red"
+					th:if="${#fields.hasErrors('phoneno')}" th:errors="*{phoneno}"></div>
+			</div>
+
+			<div class="input-group">
+				<label for="password">Password</label> <input th:field="*{password}"
+					type="password" id="password" name="password"
+					placeholder="Enter your Password" required>
+				<div class="error" style="color: red"
+					th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+			</div>
+
+			<div class="input-group">
+				<label for="confirmpassword">Confirm Password</label> <input
+					th:field="*{confirmpassword}" type="password" id="confirmpassword"
+					name="confirmpassword" placeholder="Confirm Password" required>
+				<div class="error" style="color: red"
+					th:if="${#fields.hasErrors('confirmpassword')}"
+					th:errors="*{confirmpassword}"></div>
+			</div>
+
+
+    <label class="form-label" for="gender"><b>Gender</b></label>
+    <div class="d-flex align-items-center">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="inlineRadio1" name="gender" th:field="*{gender}" th:value="Male" value="male">
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="inlineRadio2" name="gender" th:field="*{gender}" th:value="Female" value="female">
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+        </div>
+    </div>
+    <div class="error" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></div>
+
+
+
+
+
+			<button type="submit" class="btn">Register</button>
+		</form>
+	</div>
+</body>
+</html>
