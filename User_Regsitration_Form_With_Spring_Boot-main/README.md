@@ -1,14 +1,7 @@
 # User_Regsitration_Form_With_Spring_Boot
-User Registration form with spring boot and mysql database
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Registration Application</title>
-</head>
-<body>
+
 
 <h1>User Registration Application</h1>
 
